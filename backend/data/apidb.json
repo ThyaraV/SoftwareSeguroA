@@ -1,0 +1,9 @@
+{
+    "email": {
+      "subject": "Order Confirmation - Order #{orderNumber}",
+      "text": "Hello, \n\nThank you for your purchase! Your order number #{orderNumber} has been successfully processed. We will notify you once your order is on its way.\n\nBest regards,\nFabyara Team",
+      "html": "<p>Hello,</p><p>Thank you for your purchase! Your order number <strong>#{orderNumber}</strong> has been successfully processed. We will notify you once your order is on its way.</p><p>Best regards,<br><strong>Fabyara Team</strong></p>"
+    }
+}
+
+

@@ -1,0 +1,12 @@
+ADMINISTRACIONMVC/
+    |____backend/
+            |____controllers/
+                    |____apiController.js
+            |____data/
+                    |____api.js
+                    |____apidb.js
+            |____routes/
+                    |____apiRoutes.js
+            server.js
+    |____frontend/
+    .env
