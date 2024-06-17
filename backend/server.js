@@ -2,8 +2,7 @@ import path from 'path';
 import { loginRouter } from './routes/microsoft.js'; 
 import express from 'express';
 import "./middleware/microsoft.js";
-
-
+import passport from 'passport';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 dotenv.config();
@@ -18,10 +17,8 @@ import supplierRoutes from './routes/supplierRoutes.js';
 import orderRoutes from './routes/orderRoutes.js'
 import recommendationRoutes from './routes/recommendationRoutes.js';
 import apiRoutes from './routes/apiRoutes.js';
-import passport from 'passport';
 
 //mongodb+srv://thyaravintimilla:thyaravintimilla@cluster0.krodqag.mongodb.net/festivityfinder?retryWrites=true&w=majority&appName=Cluster0
-
 
 connectDB();
 const app=express();
@@ -30,8 +27,6 @@ app.use(passport.initialize());
 app.use("/auth",loginRouter);
 
 const port=process.env.PORT || 5000;
-
-
 
 
 //Body parser middleware

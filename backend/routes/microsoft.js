@@ -14,16 +14,16 @@ loginRouter.get("/microsoft/callback",passport.authenticate("auth-microsoft",{
     session:false,
 }),
 (req, res)=>{
-    //const userString=JSON.stringify(req.user)
-    /*res.send(`<!DOCTYPE html>
+    const userString=JSON.stringify(req.user)
+    res.send(`<!DOCTYPE html>
         <html lang="en">
         <body>
         </body>
         <script>
         window.opener.postMessage(${userString},"http://localhost:3000")
         </script>
-        </html>`)*/
-    //res.json(req.user);
+        </html>`)
+    res.json(req.user);
 })
 
 export {loginRouter};
