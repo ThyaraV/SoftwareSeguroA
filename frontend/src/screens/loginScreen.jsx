@@ -14,6 +14,7 @@ const LoginScreen = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const location = useLocation();
 
     const [login, { isLoading }] = useLoginMutation();
 
