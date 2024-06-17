@@ -34,7 +34,7 @@ const LoginScreen = () => {
         e.preventDefault();
         try {
             const res = await login({ email, password }).unwrap();
-            dispatch(setCredentials({ ...res, }));
+            dispatch(setCredentials({ ...res }));
             navigate(redirect);
         } catch (err) {
             toast.error(err?.data?.message || err.error);
@@ -46,16 +46,16 @@ const LoginScreen = () => {
         const messageHandler = (event) => {
             if (event.origin === "http://localhost:5000") {
                 if (event.data) {
-                    const userData = JSON.stringify(event.data); // Aquí solo como ejemplo, puedes usar las propiedades necesarias
-                    sessionStorage.setItem("user", userData);
+                    const user = JSON.parse(event.data);
+                    dispatch(setCredentials(user));
                     popup.close();
                     navigate(redirect);
                 }
             }
         };
         window.addEventListener("message", messageHandler);
-
-        // Clean up the event listener on component unmount
+    
+        // Limpia el event listener al desmontar el componente
         return () => {
             window.removeEventListener("message", messageHandler);
         };
