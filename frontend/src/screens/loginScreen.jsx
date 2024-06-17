@@ -44,9 +44,9 @@ const LoginScreen = () => {
     };
 
     const handleMicrosoftLogin = () => {
-        const popup = window.open("http://localhost:5000/auth/microsoft", "targetWindow", 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=620,height=700');
+        const popup = window.open("https://softwareseguroa-1.onrender.com/auth/microsoft", "targetWindow", 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=620,height=700');
         const messageHandler = (event) => {
-            if (event.origin === "http://localhost:5000") {
+            if (event.origin === "https://softwareseguroa-1.onrender.com") {
                 if (event.data) {
                     const user = JSON.parse(event.data);
                     dispatch(setCredentials(user));
