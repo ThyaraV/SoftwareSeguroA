@@ -195,3 +195,28 @@ table th {
   text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es demasiado largo */
 }
 
+
+/* styles/LoginScreen.css */
+.microsoft-login-btn {
+  background-color: #f5ca6d; /* Color de Microsoft */
+  color: black;
+  border: chocolate;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.microsoft-login-btn:hover {
+  background-color: #1d3a67; /* Color de Microsoft más oscuro */
+  color: white;
+}
+
+.mt-4 {
+  margin-top: 1.5rem !important; /* Ajusta el valor según sea necesario */
+}

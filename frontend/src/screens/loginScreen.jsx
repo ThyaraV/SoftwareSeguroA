@@ -7,6 +7,7 @@ import Loader from '../components/Loader.jsx';
 import { useLoginMutation } from '../slices/usersApiSlice.js';
 import { setCredentials } from '../slices/authSlice.js';
 import { toast } from "react-toastify";
+import image from "../assets/image.png";
 
 const LoginScreen = () => {
     const [email, setEmail] = useState('');
@@ -90,8 +91,9 @@ const LoginScreen = () => {
                 </Button>
                 {isLoading && <Loader />}
             </Form>
-            <Form>
-                <Button onClick={handleMicrosoftLogin} disabled={isLoading}>
+            <Form className="mt-4">
+                <Button onClick={handleMicrosoftLogin} className="microsoft-login-btn" disabled={isLoading}>
+                <img src={image} alt="microsoft" />
                     Login with Microsoft
                 </Button>
             </Form>

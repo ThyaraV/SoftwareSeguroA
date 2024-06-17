@@ -12,7 +12,11 @@ loginRouter.get("/microsoft/callback", passport.authenticate("auth-microsoft", {
     failureRedirect: "/auth/microsoft",
     session: false,
 }), (req, res) => {
-    res.json(req.user); // Devuelve el objeto de usuario como JSON
+    const user = JSON.stringify(req.user);
+    res.send(`<script>
+        window.opener.postMessage('${user}', 'http://localhost:3000');
+        window.close();
+    </script>`);
 });
 
 export { loginRouter };
