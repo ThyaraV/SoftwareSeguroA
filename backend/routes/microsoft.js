@@ -14,7 +14,7 @@ loginRouter.get("/microsoft/callback", passport.authenticate("auth-microsoft", {
 }), (req, res) => {
     const user = JSON.stringify(req.user);
     res.send(`<script>
-        window.opener.postMessage('${user}', 'http://localhost:3000');
+        window.opener.postMessage('${user}', 'https://softwareseguroa-1.onrender.com');
         window.close();
     </script>`);
 });
