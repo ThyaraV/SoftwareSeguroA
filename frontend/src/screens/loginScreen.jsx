@@ -51,7 +51,7 @@ const LoginScreen = () => {
                     const user = JSON.parse(event.data);
                     dispatch(setCredentials(user));
                     popup.close();
-                    navigate(redirect);
+                    
                 }
             }
         };
