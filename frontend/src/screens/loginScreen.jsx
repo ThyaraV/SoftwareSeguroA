@@ -50,8 +50,9 @@ const LoginScreen = () => {
                 if (event.data) {
                     const user = JSON.parse(event.data);
                     dispatch(setCredentials(user));
+                    sessionStorage.setItem("userInfo", JSON.stringify(user));
                     popup.close();
-                    
+                    navigate(redirect)
                 }
             }
         };

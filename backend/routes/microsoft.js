@@ -13,11 +13,11 @@ loginRouter.get("/microsoft/callback", passport.authenticate("auth-microsoft", {
     session: false,
 }), (req, res) => {
     const user = JSON.stringify(req.user);
-    res.send(req.user)
-    /*res.send(`<script>
+    //res.send(req.user)
+    res.send(`<script>
         window.opener.postMessage('${user}', 'https://softwareseguroa-1.onrender.com');
         window.close();
-    </script>`);*/
+    </script>`);
 });
 
 console.log(loginRouter)

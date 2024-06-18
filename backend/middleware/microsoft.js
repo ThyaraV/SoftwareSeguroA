@@ -7,7 +7,7 @@ config();
 passport.use("auth-microsoft", new MicrosoftStrategy({
     clientID: process.env.MICROSOFT_CLIENT_ID,
     clientSecret: process.env.MICROSOFT_CLIENT_SECRET,
-    callbackURL: "https://softwareseguroa-1.onrender.com",
+    callbackURL: "https://softwareseguroa-1.onrender.com/auth/microsoft/callback",
     scope: ["user.read", "calendars.read", "mail.read", "offline_access"],
     authorizationURL: "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
     tokenURL: "https://login.microsoftonline.com/common/oauth2/v2.0/token",
